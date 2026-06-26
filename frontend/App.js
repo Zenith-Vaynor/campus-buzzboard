@@ -27,8 +27,8 @@ function FeedScreen({ navigation }) {
     
     try {
       const [eventsRes, noticesRes] = await Promise.all([
-        fetch('http://127.0.0.1:8000/api/events/'),
-        fetch('http://127.0.0.1:8000/api/notices/')
+        fetch('https://campus-buzzboard.onrender.com/api/events/'),
+        fetch('https://campus-buzzboard.onrender.com/api/notices/')
       ]);
 
       if (!eventsRes.ok || !noticesRes.ok) {
@@ -175,7 +175,7 @@ function EventDetailsScreen({ route }) {
   useEffect(() => {
     const fetchSingleEvent = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/events/${eventId}/`);
+        const response = await fetch(`https://campus-buzzboard.onrender.com/api/events/${eventId}/`);
         if (!response.ok) throw new Error('Failed to retrieve full data payload.');
         const data = await response.json();
         setEvent(data);
