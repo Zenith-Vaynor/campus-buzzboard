@@ -14,11 +14,10 @@ function FeedScreen({ navigation }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  // NEW STATES: For Bonus Features
+  // Bonus Features
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Updated fetch function to handle silent background refreshes
   const fetchBuzzData = async (isSilentRefresh = false) => {
     if (isSilentRefresh) {
       setIsRefreshing(true);
@@ -51,7 +50,7 @@ function FeedScreen({ navigation }) {
     fetchBuzzData();
   }, []);
 
-  // NEW: High-Sensitivity Heat Spectrum
+  // High-Sensitivity Heat Spectrum
   const getHeatColor = (score) => {
     if (score >= 90) return '#ff003c'; // Neon Red (Nuclear)
     if (score >= 70) return '#ff5500'; // Deep Orange (Critical)
@@ -107,7 +106,7 @@ function FeedScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* NEW: Terminal Search Bar */}
+      {/* Terminal Search Bar */}
       <TextInput
         style={styles.searchInput}
         placeholder="> input search query..."
@@ -119,7 +118,7 @@ function FeedScreen({ navigation }) {
       <FlatList
         data={filteredData}
         keyExtractor={(item) => item.id.toString()}
-        // NEW: Pull-to-Refresh Configuration
+        // Pull-to-Refresh Configuration
         refreshControl={
           <RefreshControl
             refreshing={isRefreshing}
@@ -140,7 +139,7 @@ function FeedScreen({ navigation }) {
               }}
               disabled={!isEvent}
             >
-              {/* NEW: Pure visual heat indicator dot, no numbers */}
+              {/* ure visual heat indicator dot, no numbers */}
               <View style={[styles.heatDot, { backgroundColor: dynamicColor, shadowColor: dynamicColor }]} />
               
               <Text style={styles.cardTitle}>{item.title}</Text>
@@ -166,14 +165,14 @@ function FeedScreen({ navigation }) {
 
 // --- Event Details Screen ---
 function EventDetailsScreen({ route }) {
-  // 1. Catch the ID passed from the previous screen
+  // Catch the ID passed from the previous screen
   const { eventId } = route.params;
   
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 2. Fetch the specific event data
+  // Fetch the specific event data
   useEffect(() => {
     const fetchSingleEvent = async () => {
       try {
@@ -190,7 +189,7 @@ function EventDetailsScreen({ route }) {
     fetchSingleEvent();
   }, [eventId]);
 
-  // 3. Render States
+  // Render States
   if (loading) {
     return (
       <View style={styles.centerContainer}>
@@ -208,7 +207,7 @@ function EventDetailsScreen({ route }) {
     );
   }
 
-  // 4. Render the Full Data
+  // Render the Full Data
   return (
     <View style={styles.container}>
       <View style={styles.detailCard}>

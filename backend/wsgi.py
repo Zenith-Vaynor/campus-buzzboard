@@ -13,9 +13,8 @@ from django.core.management import call_command
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
-# Instead of forcing it, we handle the error gracefully
 try:
     application = get_wsgi_application()
-    call_command('deploy') # This calls our custom command above
+    call_command('deploy')
 except Exception as e:
     print(f"Startup task failed: {e}")
