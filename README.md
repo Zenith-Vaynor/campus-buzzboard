@@ -1,9 +1,15 @@
-# 📡 Campus BuzzBoard // Command Center
+# Campus BuzzBoard // Command Center
 
 [![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://campus-buzzboard.vercel.app)
 [![Live API](https://img.shields.io/badge/Live_API-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://campus-buzzboard.onrender.com/api/)
+[![Android APK](https://img.shields.io/badge/Android-APK_Download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://expo.dev/accounts/zeynor/projects/campus-buzzboard/builds/acd21447-1d32-4639-8a8a-edaccf0baa33)
 
 Campus BuzzBoard is a full-stack, terminal-inspired dashboard designed to streamline campus communication. It provides a clean, high-visibility interface for students and faculty to track trending events and notices in real-time.
+
+---
+
+## Development Status: Production Ready
+The project has successfully transitioned from web-only to a native mobile application. The **Android APK** is fully compiled and production-ready, featuring a resilient network-timeout-handling layer and a high-performance heat-tracking algorithm.
 
 ---
 
@@ -21,8 +27,9 @@ Campus BuzzBoard is a full-stack, terminal-inspired dashboard designed to stream
 
 ### Frontend (The Interface)
 * **Framework:** React Native (Built via Expo)
+* **Mobile Compilation:** EAS Build (Android APK)
 * **Web Compilation:** Expo Web
-* **Deployment:** Vercel
+* **Deployment:** Expo Application Services (EAS) & Vercel
 
 ### Backend (The Brain)
 * **Framework:** Django & Django REST Framework (DRF)
@@ -38,7 +45,8 @@ The project utilizes a decoupled architecture where the React Native frontend co
 
 1. **GitHub Vault:** Central version control.
 2. **Render:** Hosts the Django API, handling automated startup migrations and database connections.
-3. **Vercel:** Hosts the optimized static frontend, utilizing environment variables to dynamically route API requests.
+3. **EAS:** Compiles the native Android binary (APK) for mobile distribution.
+4. **Vercel:** Hosts the optimized static frontend, utilizing environment variables to dynamically route API requests.
 
 ---
 
