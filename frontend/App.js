@@ -3,6 +3,8 @@ import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View, Text, StyleSheet, FlatList, ActivityIndicator, TouchableOpacity, TextInput, RefreshControl } from 'react-native';
 
+const API_URL = process.env.EXPO_PUBLIC_API_URL || 'https://campus-buzzboard.onrender.com';
+
 // --- Feed Screen ---
 function FeedScreen({ navigation }) {
   const [events, setEvents] = useState([]);
@@ -27,8 +29,8 @@ function FeedScreen({ navigation }) {
     
     try {
       const [eventsRes, noticesRes] = await Promise.all([
-        fetch('https://campus-buzzboard.onrender.com/api/events/'),
-        fetch('https://campus-buzzboard.onrender.com/api/notices/')
+        fetch('${API_URL}/api/events/'),
+        fetch('${API_URL}/api/notices/')
       ]);
 
       if (!eventsRes.ok || !noticesRes.ok) {
@@ -175,7 +177,7 @@ function EventDetailsScreen({ route }) {
   useEffect(() => {
     const fetchSingleEvent = async () => {
       try {
-        const response = await fetch(`https://campus-buzzboard.onrender.com/api/events/${eventId}/`);
+        const response = await fetch(`${API_URL}/api/events/${eventId}/`);
         if (!response.ok) throw new Error('Failed to retrieve full data payload.');
         const data = await response.json();
         setEvent(data);
