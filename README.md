@@ -2,7 +2,7 @@
 
 [![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://campus-buzzboard.vercel.app)
 [![Live API](https://img.shields.io/badge/Live_API-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://campus-buzzboard.onrender.com/api/)
-[![Android APK](https://img.shields.io/badge/Android-APK_Download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://expo.dev/accounts/zeynor/projects/campus-buzzboard/builds)
+[![Android APK](https://img.shields.io/badge/Android-APK_Download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://expo.dev/artifacts/eas/tmsZ8yPtuJpoCbaLuOct1um4vJvXytsB7EBoen5nkh8.apk)
 
 Campus BuzzBoard is a full-stack, terminal-inspired dashboard designed to streamline campus communication. It provides a clean, high-visibility interface for students and faculty to track trending events and notices in real-time.
 
