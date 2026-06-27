@@ -5,6 +5,13 @@ import { View, Text, StyleSheet, FlatList, ActivityIndicator, TouchableOpacity, 
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL || 'https://campus-buzzboard.onrender.com';
 
+const fetchWithTimeout = (url, timeout = 60000) => {
+  return Promise.race([
+    fetch(url),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), timeout))
+  ]);
+};
+
 // --- Feed Screen ---
 function FeedScreen({ navigation }) {
   const [events, setEvents] = useState([]);
@@ -28,8 +35,8 @@ function FeedScreen({ navigation }) {
     
     try {
       const [eventsRes, noticesRes] = await Promise.all([
-        fetch('${API_URL}/api/events/'),
-        fetch('${API_URL}/api/notices/')
+        fetch(`${API_URL}/api/events/`),
+        fetch(`${API_URL}/api/notices/`)
       ]);
 
       if (!eventsRes.ok || !noticesRes.ok) {
