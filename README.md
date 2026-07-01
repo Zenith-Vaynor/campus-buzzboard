@@ -15,11 +15,11 @@ The project has successfully transitioned from web-only to a native mobile appli
 
 ## Core Features
 
-* ** Heat Score Algorithm:** A custom backend logic that calculates the "liveness" of content, visualized through a highly sensitive, numberless color spectrum.
-* ** Dual-Stream Feed:** Rapid toggling between live Event and Notice data streams.
-* ** Terminal-Inspired UX:** A high-contrast, distraction-free design focused on readability, utility, and reduced cognitive load.
-* ** Live Search:** Real-time filtering capabilities across all data streams.
-* ** Native Gestures:** Pull-to-refresh integration for seamless background data fetching.
+* **Heat Score Algorithm:** A custom backend logic that calculates the "liveness" of content, visualized through a highly sensitive, numberless color spectrum.
+* **Dual-Stream Feed:** Rapid toggling between live Event and Notice data streams.
+* **Terminal-Inspired UX:** A high-contrast, distraction-free design focused on readability, utility, and reduced cognitive load.
+* **Live Search:** Real-time filtering capabilities across all data streams.
+* **Native Gestures:** Pull-to-refresh integration for seamless background data fetching.
 
 ---
 
